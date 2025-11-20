@@ -1,39 +1,104 @@
-# PROJETO APLICADO III
+# Sistema de Recomendação de Conteúdo Netflix 🎬
+
+> **Projeto Aplicado III - Ciência de Dados** > Universidade Presbiteriana Mackenzie - 2025
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Status](https://img.shields.io/badge/Status-Concluído-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+## 📌 Sobre o Projeto
+
+Este projeto consiste no desenvolvimento de um **Sistema de Recomendação** para títulos da Netflix, utilizando técnicas de **Machine Learning** e **Processamento de Linguagem Natural (NLP)**.
+
+Em um cenário de sobrecarga de conteúdo digital, o sistema visa atuar como uma ferramenta de curadoria eficiente. Além do entretenimento, o projeto possui um viés social alinhado ao **ODS 4 (Educação de Qualidade)** da ONU, propondo o uso da metodologia para recomendar documentários e conteúdos educacionais.
+
+## 👥 Integrantes do Grupo
+
+| Nome | RA |
+|------|----|
+| **Flávio Estevam Nogueira Andrade** | 10441572 |
+| **Kaique Nascimento de Paula** | 24024831 |
+| **Miguel Shiraishi** | 10431805 |
+| **Moacyr Souza Barros** | 10441179 |
+
 
 ---
 
-### **Integrantes do Grupo**
+## 📚 Referencial Teórico
 
-* Flávio Estevam Nogueira Andrade - RA: 10441572
-* Kaique Nascimento de Paula - RA: 24024831
-* Miguel Shiraishi - RA: 10431805
-* Moacyr Souza Barros - RA: 10441179
+O projeto fundamenta-se nas principais abordagens de Sistemas de Recomendação estudadas na literatura:
 
-Este projeto foi realizado na Universidade Presbiteriana Mackenzie, em São Paulo, no ano de 2025.
-
----
-
-### **1. Introdução**
-
-Com o crescimento das plataformas de streaming, como a Netflix, os sistemas de recomendação se tornaram essenciais para ajudar os usuários a encontrarem conteúdos de interesse. Esses sistemas personalizam a experiência, aumentam o engajamento e auxiliam em decisões estratégicas de negócios.
-
-A motivação para este trabalho é aplicar técnicas de **ciência de dados** e **aprendizado de máquina** em um problema atual e relevante. A escolha pela Netflix se justifica pela sua relevância global e por seus mecanismos de recomendação serem um diferencial competitivo.
-
-O objetivo geral do projeto é desenvolver um sistema de recomendação de títulos da Netflix, utilizando dados públicos e métodos de aprendizado de máquina.
-
-Os objetivos específicos são:
-* Coletar e preparar a base de dados.
-* Explorar as variáveis relevantes.
-* Implementar e comparar diferentes abordagens de recomendação.
-* Avaliar o desempenho usando métricas adequadas.
+1.  **Filtragem Baseada em Conteúdo (Content-Based):** Técnica adotada neste projeto. A similaridade é calculada através de atributos explícitos dos itens (sinopse, elenco, diretor). É eficaz para evitar o problema de *cold start* (novos itens), mas tende a ter menor diversidade (serendipidade).
+2. **Filtragem Colaborativa:** Baseia-se no comportamento coletivo e histórico de interações (User-based ou Item-based), utilizando técnicas como fatoração de matrizes (SVD, ALS).
+3. **Modelos Híbridos e Deep Learning:** Combinam múltiplas técnicas ou utilizam redes neurais profundas para capturar relações complexas e mitigar a esparsidade dos dados.
 
 ---
 
-### **2. Cronograma de Atividades (Estimativa)**
+## 🛠️ Metodologia
 
-| Etapa | Tarefa | Status | Data de Entrega |
-| :--- | :--- | :--- | :--- |
-| 1 | Apresentação do Projeto e Concepção do Produto | Concluído | 06/09/2025 |
-| 2 | Definição do Produto | Em Andamento | 02/10/2025 |
-| 3 | Metodologia | Em Andamento | 30/10/2025 |
-| 4 | Resultados e Conclusão | Em Andamento | 20/11/2025 |
+O desenvolvimento seguiu o ciclo de vida de um projeto de Ciência de Dados, conforme detalhado abaixo:
+
+### 1. Coleta e Preparação de Dados
+* **Dataset:** Utilizou-se a base pública `netflix_titles.csv` com 6.234 títulos.
+* **Limpeza:** Tratamento de dados faltantes em colunas como `director`, `cast` e `country`.
+* **Engenharia de Features:** Criação da coluna `tags` através da concatenação de *director*, *cast*, *listed_in* (categorias) e *description*.
+* **Normalização:** Conversão para minúsculas e remoção de espaços em nomes próprios (ex: "peter cullen" → "petercullen") para garantir que sejam tratados como tokens únicos pelo vetorizador.
+
+### 2. Implementação do Algoritmo
+* **Vetorização (TF-IDF):** O texto foi transformado em vetores numéricos usando *Term Frequency-Inverse Document Frequency*, penalizando termos muito comuns (stop words) e valorizando termos raros e descritivos.
+* **Similaridade do Cosseno:** Calculou-se a proximidade angular entre os vetores para gerar a **Matriz de Similaridade** entre todos os títulos do catálogo.
+
+---
+
+## 📊 Resultados Obtidos
+
+A avaliação foi qualitativa, focada na **coerência temática** das recomendações, dado a ausência de dados de interação de usuários (ratings).
+
+### Exemplos de Recomendações
+
+| Título de Entrada | Recomendações Geradas | Análise |
+|-------------------|-----------------------|---------|
+| **The Crown** | *Downton Abbey*, *Call the Midwife*, *The Frankenstein Chronicles* | [cite_start]Alta coerência com dramas históricos e produções britânicas[cite: 168]. |
+| **Squid Game** | *Alice in Borderland*, *Sweet Home*, *Kingdom* | [cite_start]Identificou produções asiáticas, thrillers e dramas intensos[cite: 170]. |
+| **Control Z** | *Elite*, *Who Killed Sara?*, *Rebelde* | [cite_start]Sugeriu séries hispano-americanas de suspense e drama teen[cite: 170]. |
+| **The Garden of Words** | *A Silent Voice*, *Your Name*, *Flavors of Youth* | [cite_start]Manteve-se fiel ao gênero anime e temas emocionais[cite: 172]. |
+
+### Pontos Fortes e Limitações
+* **Fortes:** Coerência temática, distinção clara entre gêneros e eficiência computacional para prototipagem[cite: 174, 176].
+*  **Limitações:** Baixa diversidade (bolha de conteúdo) e dependência estrita da qualidade dos metadados textuais[cite: 179, 180].
+
+---
+
+## 🏁 Conclusão
+
+O projeto cumpriu o objetivo de desenvolver um sistema funcional de recomendação *Content-Based*. A abordagem mostrou-se eficaz para identificar similaridades semânticas sem a necessidade de histórico de usuários. Além disso, a metodologia mostrou-se aplicável para fins educacionais (ODS 4), servindo como base para sistemas de curadoria de aprendizado.
+
+---
+
+## 🚀 Melhorias e Trabalhos Futuros
+
+Para evoluir este projeto de um protótipo acadêmico para um produto robusto, mapeamos as seguintes etapas:
+
+### 1. Melhorias no Modelo
+* **Representação Semântica:** Substituir o TF-IDF por modelos de linguagem avançados como **Word2Vec**, **Doc2Vec** ou **Sentence-BERT** para capturar contextos profundos além da correspondência exata de palavras.
+* **Refinamento de Texto:** Implementar técnicas de *stemming* ou *lemmatization* e testar *n-grams* (bigramas) para enriquecer o contexto.
+
+### 2. Evolução do Sistema
+* **Abordagem Híbrida:** Combinar a filtragem baseada em conteúdo com filtragem colaborativa para resolver problemas de esparsidade e aumentar a diversidade das sugestões.
+* **Métricas Quantitativas:** Implementar métricas de ranking como *Precision@K*, *Recall@K* e *NDCG* assim que dados de interação estiverem disponíveis.
+
+### 3. Expansão e Produto
+* **Multimodalidade:** Integrar análise de imagens (pôsteres) e áudio (trilhas sonoras) no cálculo de similaridade.
+* **MLOps:** Implementar pipeline de produção com API, monitoramento de performance e dashboards.
+* **Foco Educacional:** Adaptar o algoritmo para plataformas de museus virtuais ou bases de conhecimento, priorizando conteúdo cultural.
+
+---
+
+## 📑 Referências
+
+* **BURKE, R.** *Hybrid recommender systems: Survey and experiments*. [cite_start]User Modeling and User-Adapted Interaction, 2002[cite: 219].
+* **GÓMEZ-URIBE, C. A.; HUNT, N.** *The Netflix Recommender System*. [cite_start]ACM, 2016[cite: 220].
+* **RICCI, F. et al.** *Recommender Systems Handbook*. [cite_start]Springer, 2022[cite: 229].
+* **ZHANG, S. et al.** *Deep learning based recommender system*. [cite_start]ACM Computing Surveys, 2019[cite: 232].
+
+---

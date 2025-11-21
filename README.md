@@ -58,14 +58,14 @@ A avaliação foi qualitativa, focada na **coerência temática** das recomenda�
 
 | Título de Entrada | Recomendações Geradas | Análise |
 |-------------------|-----------------------|---------|
-| **The Crown** | *Downton Abbey*, *Call the Midwife*, *The Frankenstein Chronicles* | [cite_start]Alta coerência com dramas históricos e produções britânicas[cite: 168]. |
-| **Squid Game** | *Alice in Borderland*, *Sweet Home*, *Kingdom* | [cite_start]Identificou produções asiáticas, thrillers e dramas intensos[cite: 170]. |
-| **Control Z** | *Elite*, *Who Killed Sara?*, *Rebelde* | [cite_start]Sugeriu séries hispano-americanas de suspense e drama teen[cite: 170]. |
-| **The Garden of Words** | *A Silent Voice*, *Your Name*, *Flavors of Youth* | [cite_start]Manteve-se fiel ao gênero anime e temas emocionais[cite: 172]. |
+| **The Crown** | *Downton Abbey*, *Call the Midwife*, *The Frankenstein Chronicles* | Alta coerência com dramas históricos e produções britânicas. |
+| **Squid Game** | *Alice in Borderland*, *Sweet Home*, *Kingdom* | Identificou produções asiáticas, thrillers e dramas intensos. |
+| **Control Z** | *Elite*, *Who Killed Sara?*, *Rebelde* | Sugeriu séries hispano-americanas de suspense e drama teen. |
+| **The Garden of Words** | *A Silent Voice*, *Your Name*, *Flavors of Youth* | Manteve-se fiel ao gênero anime e temas emocionais. |
 
 ### Pontos Fortes e Limitações
-* **Fortes:** Coerência temática, distinção clara entre gêneros e eficiência computacional para prototipagem[cite: 174, 176].
-*  **Limitações:** Baixa diversidade (bolha de conteúdo) e dependência estrita da qualidade dos metadados textuais[cite: 179, 180].
+* **Fortes:** Coerência temática, distinção clara entre gêneros e eficiência computacional para prototipagem.
+*  **Limitações:** Baixa diversidade (bolha de conteúdo) e dependência estrita da qualidade dos metadados textuais.
 
 ---
 
@@ -96,9 +96,13 @@ Para evoluir este projeto de um protótipo acadêmico para um produto robusto, m
 
 ## 📑 Referências
 
-* **BURKE, R.** *Hybrid recommender systems: Survey and experiments*. [cite_start]User Modeling and User-Adapted Interaction, 2002[cite: 219].
-* **GÓMEZ-URIBE, C. A.; HUNT, N.** *The Netflix Recommender System*. [cite_start]ACM, 2016[cite: 220].
-* **RICCI, F. et al.** *Recommender Systems Handbook*. [cite_start]Springer, 2022[cite: 229].
-* **ZHANG, S. et al.** *Deep learning based recommender system*. [cite_start]ACM Computing Surveys, 2019[cite: 232].
+* **BURKE, R.** *Hybrid recommender systems: Survey and experiments*. User Modeling and User-Adapted Interaction, 2002.
+* **GÓMEZ-URIBE, C. A.; HUNT, N.** *The Netflix Recommender System*. ACM, 2016.
+* **RICCI, F. et al.** *Recommender Systems Handbook*. Springer, 2022.
+* **ZHANG, S. et al.** *Deep learning based recommender system*. ACM Computing Surveys, 2019.
 
 ---
+
+## ▶ Link da apresentação no YouTube
+
+https://www.youtube.com/watch?v=3exQAmMsKhY
